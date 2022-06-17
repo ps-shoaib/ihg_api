@@ -106,28 +106,28 @@ namespace IGHportalAPI
             });
 
 
-            //services.AddCors(options =>
-            //{
-            //    options.AddDefaultPolicy(builder =>
-            //    {
-            //        builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-            //    });
-            //});
-
             services.AddCors(options =>
             {
-                options.AddPolicy(name: MyPolicy,
-                    builder =>
-                    {
-                        builder
-                        //.AllowAnyOrigin()
-                        //.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-                        //.WithOrigins("https://ihg.ps-beta.com",
-                        //                    "http://localhost:333")
-                               .WithHeaders(HeaderNames.ContentType, "x-custom-header")
-                               .WithMethods("PUT", "DELETE", "GET", "POST", "OPTIONS");
-                    });
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
             });
+
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy(name: MyPolicy,
+            //        builder =>
+            //        {
+            //            builder
+            //            //.AllowAnyOrigin()
+            //            //.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+            //            //.WithOrigins("https://ihg.ps-beta.com",
+            //            //                    "http://localhost:333")
+            //                   .WithHeaders(HeaderNames.ContentType, "x-custom-header")
+            //                   .WithMethods("PUT", "DELETE", "GET", "POST", "OPTIONS");
+            //        });
+            //});
 
 
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
@@ -158,7 +158,9 @@ namespace IGHportalAPI
 
             app.UseRouting();
 
-            app.UseCors(MyPolicy);
+            //app.UseCors(MyPolicy);
+            app.UseCors();
+
 
             app.UseAuthorization();
 
