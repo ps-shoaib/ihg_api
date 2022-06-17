@@ -119,7 +119,8 @@ namespace IGHportalAPI
                 options.AddPolicy(name: MyPolicy,
                     builder =>
                     {
-                        builder.AllowAnyOrigin()
+                        builder
+                        //.AllowAnyOrigin()
                         //.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
                         //.WithOrigins("https://ihg.ps-beta.com",
                         //                    "http://localhost:333")
