@@ -158,6 +158,7 @@ namespace IGHportalAPI
 
             app.UseRouting();
 
+
             //app.UseCors(MyPolicy);
             app.UseCors();
 
