@@ -121,8 +121,8 @@ namespace IGHportalAPI
                     {
                         builder
                         //.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-                        .WithOrigins("https://ihg.ps-beta.com",
-                                            "http://localhost:333")
+                        //.WithOrigins("https://ihg.ps-beta.com",
+                        //                    "http://localhost:333")
                                .WithHeaders(HeaderNames.ContentType, "x-custom-header")
                                .WithMethods("PUT", "DELETE", "GET", "POST", "OPTIONS");
                     });
